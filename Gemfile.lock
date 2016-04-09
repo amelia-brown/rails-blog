@@ -38,13 +38,15 @@ GEM
       tzinfo (~> 1.1)
     ansi (1.5.0)
     arel (6.0.3)
+    autoprefixer-rails (6.3.6)
+      execjs
     bcrypt (3.1.11)
     binding_of_caller (0.7.3.pre1)
       debug_inspector (>= 0.0.1)
     bootstrap-wysihtml5-rails (0.3.3.8)
       railties (>= 3.0)
     builder (3.2.2)
-    byebug (8.2.3)
+    byebug (8.2.4)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -197,6 +199,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bcrypt (~> 3.1.7)
   bootstrap-wysihtml5-rails
   byebug

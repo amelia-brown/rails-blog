@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'x-editable-rails'
 gem 'bootstrap-wysihtml5-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'autoprefixer-rails'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
