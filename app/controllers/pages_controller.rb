@@ -10,7 +10,15 @@ class PagesController < ApplicationController
   end
   def update
     @page = Page.find(params[])
-
+    respond_to do |format|
+      if @page.update(page_params)
+        format.html { redirect_to @page, notice: 'Content was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @page.errors, status: :unprocessable_entity }
+      end
+    end
   end
   def about
     @page = Page.find_by(title: "About")
