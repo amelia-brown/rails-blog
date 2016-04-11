@@ -1,7 +1,6 @@
 <% provide(:title, "About") %>
-
-<div class="content">
-    <div class="content-blocks-container">
-      <%= render @about_content %>
-    </div>
-</div>
+<% if @page.content_blocks.any? %>
+  <div class="content">
+    <%= render @content %>
+  </div>
+<% end %>

@@ -12,6 +12,5 @@
  *= require_self
  *= require bootstrap
  *= require bootstrap3-editable/bootstrap-editable
- *= require bootstrap-editable.scss
  *= require_tree .
  */

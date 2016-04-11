@@ -1,1 +1,6 @@
 <% provide(:title, "Work") %>
+<% if @page.content_blocks.any? %>
+  <div class="content">
+    <%= render @content %>
+  </div>
+<% end %>

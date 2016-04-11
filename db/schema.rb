@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20160410003705) do
   create_table "pages", force: :cascade do |t|
     t.integer  "content_block_id"
     t.string   "title"
-    t.text     "content"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
