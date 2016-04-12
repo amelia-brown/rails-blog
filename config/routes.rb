@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get 'about' => 'pages#about'
-  post 'about' => 'pages#about'
+  put 'about' => 'pages#update'
   get 'work' => 'pages#work'
   get 'contact' => 'pages#contact'
   get 'login' => 'sessions#new'

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :logged_in_user, only: [:edit]
+  before_action :logged_in_user, only: [:update]
   def show
   end
 
@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   def home
   end
   def update
-    @page = Page.find(params[])
+    @page = Page.find(params[:title])
     respond_to do |format|
       if @page.update(page_params)
         format.html { redirect_to @page, notice: 'Content was successfully updated.' }
