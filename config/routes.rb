@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   get 'users/new'
 
   root 'pages#home'
-  get 'about' => 'pages#about'
-  put 'about' => 'pages#update'
-  get 'work' => 'pages#work'
+  get '/about' => 'pages#about'
+  put '/about' => 'pages#update'
+  get '/work' => 'pages#work'
+  put '/work' => 'pages#update'
   get 'contact' => 'pages#contact'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

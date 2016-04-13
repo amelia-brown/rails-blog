@@ -1,20 +1,30 @@
 $(document).ready(function() {
+  $.fn.editable.defaults.mode = 'inline';
   $('.editable').editable({
-    type: "textarea",
-    url: "/about",
-    name: "content",
-    title: "Update content",
     ajaxOptions: {
       type: 'put',
       dataType: 'json'
     }
   });
 
-  $.ajax({
-    url: '/about',
-    responseTime: 200,
-    response: function(settings) {
-      console.log(settings);
-    }
-  });
+
+  if (window.location.pathname === "/work") {
+    $.ajax({
+      url: '/work',
+      responseTime: 200,
+      response: function(settings) {
+        console.log(settings);
+      }
+   });
+  } else if (window.location.pathname === "/about") {
+    $.ajax({
+      url: '/about',
+      responseTime: 200,
+      response: function(settings) {
+        console.log(settings);
+      }
+   });
+  } else {
+    return;
+  }
 });

@@ -1,8 +1,13 @@
 <div class="content">
   <a href="#"
      class="editable"
-     id="content<%= content_block.id %>"
-     data-pk="<%= content_block.id %>">
+     id="content<%= content_block.id %>",
+
+     data-type="textarea",
+     data-name="content",
+     data-url="<%= @page.title %>",
+     data-pk="<%= content_block.id %>",
+     data-title="Update content">
   <%= content_block.content %>
   </a>
 </div>
