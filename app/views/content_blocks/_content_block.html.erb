@@ -3,11 +3,21 @@
      class="editable"
      id="content<%= content_block.id %>",
 
+     data-disabled="<%= !content_block.editable %>",
      data-type="textarea",
      data-name="content",
      data-url="<%= @page.title %>",
      data-pk="<%= content_block.id %>",
      data-title="Update content">
-  <%= content_block.content %>
+     <%= content_block.content %>
+
   </a>
+  <% if logged_in? %>
+    <i class="material-icons"
+       id="edit<%= content_block.id %>"><%= link_to edit_link_text(content_block),
+         {:action => :edit, :editable => content_block.editable, :pk => content_block.id }, :method => :put,
+         :remote => :true %>
+    </i>
+  <% end %>
+
 </div>

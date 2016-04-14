@@ -1,9 +1,12 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  content: MyText
-  page_id: 
-
-two:
-  content: MyText
-  page_id: 
+blockOne:
+  content: "Lorem Ipsum"
+  page_id: "1"
+blockTwo:
+  content: "Lorem Ipsum"
+  page_id: "2"
+blockThree:
+  content: "Lorem Ipsum"
+  page_id: "2"
+blockFour:
+  content: "Lorem Ipsum"
+  page_id: "2"

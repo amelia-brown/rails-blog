@@ -5,4 +5,3 @@ about.content_blocks.create!(content: "Lorem Ipsum")
 work.content_blocks.create!(content: "Lorem Ipsum")
 work.content_blocks.create!(content: "Lorem Ipsum")
 work.content_blocks.create!(content: "Lorem Ipsum")
-
