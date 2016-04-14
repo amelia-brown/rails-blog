@@ -14,8 +14,8 @@
   </a>
   <% if logged_in? %>
     <i class="material-icons"
-       id="edit<%= content_block.id %>"><%= link_to edit_link_text(content_block),
-         {:action => :edit, :editable => content_block.editable, :pk => content_block.id }, :method => :put,
+       id="edit<%= content_block.id %>"><%= link_to "edit",
+         {:action => :update, :editable => content_block.editable, :pk => content_block.id, :toggle => true }, :method => :put,
          :remote => :true %>
     </i>
   <% end %>
