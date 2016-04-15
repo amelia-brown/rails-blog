@@ -1,6 +1,7 @@
 <li id="post-<%= post.id %>">
-  <span class="title"></span>
-  <p class="byline"><% post.user.name %></p>
-  <span class="timestamp">Posted <%= time_ago_in_words(post.created_at) %> ago.</span>
-  <span class="content"><%= post.content %></span>
+  <span class="post-title"><%= post.title %></span>
+  <p class="post-byline"><%= post.user.name %></p>
+  <span class="post-timestamp">Posted <%= time_ago_in_words(post.created_at) %> ago.</span>
+  <div class="post-photo"><%= image_tag post.picture.url if post.picture? %></div>
+  <div class="post-content"><%= post.content %></div>
 </li>

@@ -1,8 +1,33 @@
-<%= form_for(@post) do |f| %>
+<%= form_for(@post, html: {multipart: true}) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <textarea id="wysihtml5-textarea" placeholder="Compose..."></textarea>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+  <%= f.text_area :content,
+      id: "wysihtml5-textarea",
+      placeholder: "Compose..." %>
   <div id="wysihtml5-toolbar" style="display: none;">
     <a data-wysihtml5-command="bold">bold</a>
     <a data-wysihtml5-command="italic">italic</a>
     <a data-wysihtml5-command="createLink">insert link</a>
+    <div data-wysihtml5-dialog="createLink" style="display: none;">
+      <label>
+        Link:
+        <input data-wysihtml5-dialog-field="href" value="http://" class="text">
+      </label>
+      <a data-wysihtml5-action="save">ok</a> <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+    </div>
   </div>
+  <%= f.submit "Post", class: "submit" %>
+  <span class="picture">
+    <%= f.file_field :picture, accept: "image/jpeg,image/gif,image.png" %>
+  </span>
+<% end %>
+
+<script type="text/javascript">
+$('post_picture').bind('change', function() {
+  var size_in_megabytes = this.files[0].size/1024/1024;
+  if (size_in_megabytes > 5) {
+    alert('Maximum file size is 5MB. Please choose a smaller file.');
+  }
+});
+</script>

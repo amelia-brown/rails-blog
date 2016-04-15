@@ -3,7 +3,8 @@ class PagesController < ApplicationController
   def show
   end
   def home
-    @posts = Post.all.paginate(page: params[:page])
+    @posts = User.first.posts.all.paginate(page: params[:page])
+    @post = User.first.posts.build if logged_in?
   end
 
   def update

@@ -1,13 +1,13 @@
 <% provide(:title, "Home") %>
 
 <% if logged_in? %>
-  <i class="material-icons">add circle outline</i>
+  <i class="material-icons">add_circle_outline</i>
   <section class="post_form">
     <%= render 'shared/post_form' %>
   </section>
 <% end %>
 
-<% if @posts.any? %>
+<% if User.first.posts.any? %>
   <div class="feed">
     <ol>
       <%= render @posts %>

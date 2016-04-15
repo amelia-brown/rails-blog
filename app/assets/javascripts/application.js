@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap3-editable/bootstrap-editable
+//= require wysihtml-toolbar
+//= require parser_rules/advanced
 //= require_tree .
