@@ -12,11 +12,13 @@
      <%= content_block.content %>
 
   </a>
+
   <% if logged_in? %>
     <i class="material-icons"
        id="edit<%= content_block.id %>"><%= link_to "edit",
-         {:action => :update, :editable => content_block.editable, :pk => content_block.id, :toggle => true }, :method => :put,
-         :remote => :true %>
+         { :action => :update, :editable => content_block.editable, :pk => content_block.id },
+         :method => :put,
+         :remote => true %>
     </i>
   <% end %>
 

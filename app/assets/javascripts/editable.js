@@ -6,8 +6,6 @@ $(document).ready(function() {
       dataType: 'json'
     }
   });
-
-
   if (window.location.pathname === "/work") {
     $.ajax({
       url: '/work',
