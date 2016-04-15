@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   def show
   end
   def home
+    @posts = Post.all.paginate(page: params[:page])
   end
 
   def update
