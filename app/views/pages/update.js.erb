@@ -5,8 +5,8 @@ $('.edit').click(function() {
     responseTime:200,
     dataType: 'json',
     type: 'put',
-    response: function(data) {
-      console.log(data);
+    success: function(settings) {
+      console.log(settings);
     }
   });
   } else if (window.location.pathname === "/about") {
@@ -15,7 +15,7 @@ $('.edit').click(function() {
       responseTime:200,
       dataType: 'json',
       type: 'put',
-      response: function(settings) {
+      success: function(settings) {
         console.log(settings);
       }
     });

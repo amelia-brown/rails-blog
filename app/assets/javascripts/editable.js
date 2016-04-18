@@ -13,7 +13,7 @@ $(document).ready(function() {
       response: function(settings) {
         console.log(settings);
       }
-   });
+    });
   } else if (window.location.pathname === "/about") {
     $.ajax({
       url: '/about',
@@ -21,8 +21,34 @@ $(document).ready(function() {
       response: function(settings) {
         console.log(settings);
       }
-   });
+    });
   } else {
     return;
-  }
+  };
+
+  $('.edit').click(function() {
+    if (window.location.pathname === "/work") {
+      $.ajax({
+        url: "/work",
+        responseTime:200,
+        dataType: 'json',
+        type: 'put',
+        success: function(settings) {
+          console.log(settings);
+        }
+      });
+    } else if (window.location.pathname === "/about") {
+      $.ajax({
+        url: "/about",
+        responseTime:200,
+        dataType: 'json',
+        type: 'put',
+        success: function(settings) {
+          console.log(settings);
+        }
+      });
+    } else {
+      return;
+    }
+  });
 });

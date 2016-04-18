@@ -17,7 +17,6 @@ class PagesController < ApplicationController
       @editable = params[:editable]
       @content_block.toggle!(:editable)
       respond_to do |format|
-        format.js { }
         format.json { render json: @content_block }
       end
 #      render :nothing => true
@@ -57,6 +56,6 @@ class PagesController < ApplicationController
 
     private
     def page_params
-      params.permit(:pk, :id, :editable)
+      params.require(:page, :content_block).permit(:pk, :id, :editable)
     end
   end
