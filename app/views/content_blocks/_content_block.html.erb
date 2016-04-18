@@ -6,6 +6,7 @@
      data-disabled="<%= !content_block.editable %>",
      data-type="textarea",
      data-name="content",
+     page="<%= content_block.page.id %>",
      data-url="<%= @page.title %>",
      data-pk="<%= content_block.id %>",
      data-title="Update content">
@@ -14,11 +15,10 @@
   </a>
 
   <% if logged_in? %>
-    <i class="material-icons"
+    <i class="material-icons edit"
        id="edit<%= content_block.id %>"><%= link_to "edit",
-         { :action => :update, :editable => content_block.editable, :pk => content_block.id },
-         :method => :put,
-         :remote => true %>
+         { :action => :update, :editable => content_block.editable, :pk => content_block.id, :page => content_block.page.id },
+         { :method => :put, :remote => true } %>
     </i>
   <% end %>
 

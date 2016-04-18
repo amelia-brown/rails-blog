@@ -8,24 +8,28 @@ class PagesController < ApplicationController
   end
 
   def update
-    @current_page = request.env['PATH_INFO']
-    if @current_page === "/about"
-      @page = Page.find(1)
-    elsif @current_page === "/work"
-      @page = Page.find(2)
-    end
 
-    @content_block = @page.content_blocks.find(params[:pk])
     @editable = params[:editable]
 
     if @editable != nil
+      @page = Page.find(params[:page])
+      @content_block = @page.content_blocks.find(params[:pk])
       @editable = params[:editable]
+      @content_block.toggle!(:editable)
       respond_to do |format|
-        @content_block.toggle!(:editable)
-          format.json { render json: @content_block }
+        format.js { }
+        format.json { render json: @content_block }
       end
 #      render :nothing => true
-    elsif @toggle === nil
+    elsif @editable === nil
+
+      @current_page = request.env['PATH_INFO']
+        if @current_page === "/about"
+          @page = Page.find(1)
+        elsif @current_page === "/work"
+          @page = Page.find(2)
+        end
+      @content_block = @page.content_blocks.find(params[:pk])
       content = params[:value]
       respond_to do |format|
         if @content_block.update(content: content)

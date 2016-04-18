@@ -1,0 +1,23 @@
+$('.edit').click(function() {
+  if (window.location.pathname === "/work") {
+  $.ajax({
+    url: "/work",
+    responseTime:200,
+    dataType: 'json',
+    type: 'put',
+    response: function(data) {
+      console.log(data);
+    }
+  });
+  } else if (window.location.pathname === "/about") {
+    $.ajax({
+      url: "/about",
+      responseTime:200,
+      dataType: 'json',
+      type: 'put',
+      response: function(settings) {
+        console.log(settings);
+      }
+    });
+  }
+});
