@@ -26,53 +26,30 @@ $(document).ready(function() {
     return;
   };
 
-  $('.edit').click(function() {
+  $('.edit').click(function( event ) {
+    event.preventDefault()
     var iseditable = $(this).data("editable");
-    var content_block = $(this).data("pk");
+    var id = $(this).data("pk");
+    var page = $(this).data("page");
     var path = window.location.pathname;
-    var content = $(this).data("content");
     $.ajax({
       url: path,
       responseTime:200,
       dataType: 'json',
       type: 'put',
-      data: JSON.stringify([
-        { pk: content_block,
-          content: content,
+      data: JSON.stringify(
+        { pk: id,
+          page: page,
           editable: iseditable
         }
-      ]),
+      ),
       headers: {
-        "pk": content_block
+        "Content-Type": "application/json"
       },
       success: function(settings) {
+        $('#content' + id).editable('toggleDisabled');
         console.log(settings);
-      }
+      },
     });
   });
-//    if (window.location.pathname === "/work") {
-//      $.ajax({
-//        url: "/work",
-//        responseTime:200,
-//        dataType: 'json',
-//        type: 'put',
-//        success: function(settings) {
-//          console.log(settings);
-//        }
-//      });
-//    } else if (window.location.pathname === "/about") {
-//      $.ajax({
-//        url: "/about",
-//        responseTime:200,
-//        dataType: 'json',
-//        type: 'put',
-//        success: function(settings) {
-//          console.log(settings);
-//        }
-//      });
-//    } else {
-//      return;
-//    }
-//  });
-
 });
