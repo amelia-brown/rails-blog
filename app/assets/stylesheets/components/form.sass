@@ -18,12 +18,19 @@ input, label
 input
   width: 100%
   margin-bottom: 20px
+  ::placeholder
+    color: #555
 .submit
   background: $pink
+  color: #fff
   border: none
-  border-radius: 5px
-  padding: 5px 10px
+  border-radius: 3px
+  padding: 11px 16px
   margin: 20px auto
   font-family: $sans-serif
   font-size: 1em
   width: 100px
+  box-shadow: 0 0 5px 2px transparentize(#555, 0.5)
+textarea
+  ::placeholder
+    color: #555
