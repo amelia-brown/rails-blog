@@ -1,7 +1,5 @@
-$(document).ready(function)() {
-
-  $("#show-post-form").click() {
-    $(".modal").add_class("modal-showing")
-  };
-
-};
+$(document).ready(function() {
+  $(".toggle-modal-button").click(function() {
+    $(".toggle-modal").toggle();
+  });
+});

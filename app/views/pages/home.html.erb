@@ -1,13 +1,13 @@
 <% provide(:title, "Home") %>
 
 <% if logged_in? %>
-    <i class="material-icons" id="show-post-form">add_circle_outline</i>
+    <i class="material-icons toggle-modal-button" id="show-post-form">add_circle_outline</i>
     <%= render 'shared/post_form' %>
 <% end %>
 <% if User.first.posts.any? %>
   <div class="feed">
     <ol>
-      <%= CGI.escapeHTML render @posts %>
+      <%= render @posts %>
     </ol>
     <% will_paginate @posts %>
   </div>

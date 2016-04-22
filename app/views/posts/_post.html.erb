@@ -3,5 +3,5 @@
   <p class="post-byline"><%= post.user.name %></p>
   <span class="post-timestamp">Posted <%= time_ago_in_words(post.created_at) %> ago.</span>
   <div class="post-photo"><%= image_tag post.picture.url if post.picture? %></div>
-  <div class="post-content"><%= post.content %></div>
+  <div class="post-content"><%= post.content.html_safe %></div>
 </li>
