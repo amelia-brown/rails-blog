@@ -1,34 +1,36 @@
-<div class="post-form modal-content">
-  <i class="material-icons post-close">close</i>
-  <h3 class="post-form-heading">New Post</h3>
-  <%= form_for(@post, html: {multipart: true}) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <%= f.text_field :title, class: 'form-control post-form-title-field', placeholder: "Title" %>
-    <div class="picture">
-      <%= f.label :picture do %>
-        <i class="material-icons post-form-photo-label">add_a_photo</i>
-        <span>Add a photo</span>
-      <% end %>
-      <%= f.file_field :picture, class: "post-form-photo-input", accept: "image/jpeg,image/gif,image.png" %>
-    </div>
-    <%= f.text_area :content,
-      class: "post-form-content",
-      id: "wysihtml5-textarea",
-      placeholder: "Compose..." %>
-    <div id="wysihtml5-toolbar" style="display: none;">
-      <a data-wysihtml5-command="bold" class="wysihtml-button">bold</a>
-      <a data-wysihtml5-command="italic" class="wysihtml-button">italic</a>
-      <a data-wysihtml5-command="createLink" class="wysihtml-button">insert link</a>
-      <div data-wysihtml5-dialog="createLink" style="display: none;">
-        <label>
-          Link:
-          <input data-wysihtml5-dialog-field="href" value="http://" class="text">
-        </label>
-        <a data-wysihtml5-action="save">ok</a> <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+<div class="modal">
+  <div class="post-form modal-content">
+    <i class="material-icons post-close" id="close-post-form">close</i>
+    <h3 class="post-form-heading">New Post</h3>
+    <%= form_for(@post, html: {multipart: true}) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.text_field :title, class: 'form-control post-form-title-field', placeholder: "Title" %>
+      <div class="picture">
+        <%= f.label :picture do %>
+          <i class="material-icons post-form-photo-label">add_a_photo</i>
+          <span>Add a photo</span>
+        <% end %>
+        <%= f.file_field :picture, class: "post-form-photo-input", accept: "image/jpeg,image/gif,image.png" %>
       </div>
-    </div>
-    <%= f.submit "Post", class: "submit post-submit" %>
-      <% end %>
+      <%= f.text_area :content,
+        class: "post-form-content",
+        id: "wysihtml5-textarea",
+        placeholder: "Compose..." %>
+      <div id="wysihtml5-toolbar" style="display: none;">
+        <a data-wysihtml5-command="bold" class="wysihtml-button">bold</a>
+        <a data-wysihtml5-command="italic" class="wysihtml-button">italic</a>
+        <a data-wysihtml5-command="createLink" class="wysihtml-button">insert link</a>
+        <div data-wysihtml5-dialog="createLink" style="display: none;">
+          <label>
+            Link:
+            <input data-wysihtml5-dialog-field="href" value="http://" class="text">
+          </label>
+          <a data-wysihtml5-action="save">ok</a> <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+        </div>
+      </div>
+      <%= f.submit "Post", class: "submit post-submit" %>
+    <% end %>
+  </div>
 </div>
 
 <script type="text/javascript">
