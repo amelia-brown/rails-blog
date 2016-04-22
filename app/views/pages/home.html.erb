@@ -1,14 +1,14 @@
 <% provide(:title, "Home") %>
 
 <% if logged_in? %>
-    <i class="material-icons toggle-modal-button" id="show-post-form">add_circle_outline</i>
+    <i class="material-icons toggle-modal-button" id="show-post-form">add</i>
     <%= render 'shared/post_form' %>
 <% end %>
 <% if User.first.posts.any? %>
   <div class="feed">
-    <ol>
+    <ol class="feed-list">
       <%= render @posts %>
     </ol>
-    <% will_paginate @posts %>
+    <%= will_paginate @posts %>
   </div>
 <% end %>

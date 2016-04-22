@@ -8,7 +8,7 @@ work.content_blocks.create!(content: "Lorem Ipsum")
 work.content_blocks.create!(content: "Lorem Ipsum")
 work.content_blocks.create!(content: "Lorem Ipsum")
 
-content = Faker::Lorem.sentence(12)
 12.times do
-  User.find(1).posts.create!(content: content, title: "Example blog post")
+  content = Faker::Lorem.paragraphs(3, true).join("")
+  User.find(1).posts.create!(content: "<p>" + content + "</p>" + "<p>" + content + "</p>" + "<p>" + content + "</p>", title: "Example blog post")
 end

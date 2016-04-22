@@ -1,7 +1,11 @@
-<li id="post-<%= post.id %>">
-  <span class="post-title"><%= post.title %></span>
-  <p class="post-byline"><%= post.user.name %></p>
-  <span class="post-timestamp">Posted <%= time_ago_in_words(post.created_at) %> ago.</span>
-  <div class="post-photo"><%= image_tag post.picture.url if post.picture? %></div>
-  <div class="post-content"><%= post.content.html_safe %></div>
+<li id="post-<%= post.id %>" class="feed-posts">
+  <div class="post-feed-info">
+    <h4 class="post-feed-title"><%= post.title %></h4>
+    <p class="post-feed-byline">By <%= post.user.name %></p>
+    <span class="post-feed-timestamp">Posted <%= time_ago_in_words(post.created_at) %> ago.</span>
+  </div>
+  <div class="post-feed-content">
+    <div class="post-feed-photo"><%= image_tag post.picture.url if post.picture? %></div>
+    <div class="post-feed-text"><%= post.content.html_safe %></div>
+  </div>
 </li>
