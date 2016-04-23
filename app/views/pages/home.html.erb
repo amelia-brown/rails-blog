@@ -1,8 +1,10 @@
 <% provide(:title, "Home") %>
 
 <% if logged_in? %>
+  <div class="post-new">
     <i class="material-icons toggle-modal-button" id="show-post-form">add</i>
-    <%= render 'shared/post_form' %>
+  </div>
+  <%= render 'shared/post_form' %>
 <% end %>
 <% if User.first.posts.any? %>
   <div class="feed">

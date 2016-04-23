@@ -1,4 +1,9 @@
 @import '../base/colors'
+
+.post-new
+  float: right
+.icon-explain
+  display: block
 .toggle-modal
   display: none
 .modal
@@ -71,21 +76,22 @@
   box-shadow: 0 2px 2px 2px transparentize(#555, 0.7)
   &:hover
     cursor: pointer
-.wysihtml-button
-  padding: 5px 15px
-  width: 33%
-  border-left: 1px solid #555
-  border-right: 1px solid #555
-  color: #888
+.wysihtml-toolbar
+  display: flex
+  align-items: flex-start
+  justify-content: space-around
+.wysihtml-button,
+  padding: 3px 10px
+  max-height: 44px
+  font-size: 24px
+  line-height: 30px
+  color: $pink
+  border: 2px solid $pink
+  border-radius: 3px
   display: inline-block
   &:hover
     text-decoration: none
     color: #888
-#wysihtml5-toolbar
-  background: #ccc
-  margin: 0 auto
-  width: 100%
-  display: flex
 .post-form-heading
   margin: 2rem 0 2rem 0
   line-height: 24px
