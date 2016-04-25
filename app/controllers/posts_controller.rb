@@ -3,6 +3,15 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @previous_posts = []
+    3.times do |key|
+      post = Post.find(@post.id - key)
+      if post === nil
+        return
+      else
+        @previous_posts.push(post)
+      end
+    end
   end
 
   def create

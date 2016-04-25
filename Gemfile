@@ -14,6 +14,7 @@ gem 'bootstrap-x-editable-rails'
 gem 'wysihtml-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'autoprefixer-rails'
+gem 'truncate_html'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
