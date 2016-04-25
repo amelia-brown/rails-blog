@@ -76,22 +76,26 @@
   box-shadow: 0 2px 2px 2px transparentize(#555, 0.7)
   &:hover
     cursor: pointer
-.wysihtml-toolbar
+#wysihtml5-toolbar
+  border-top: 1px solid #ccc
   display: flex
   align-items: flex-start
-  justify-content: space-around
+  justify-content: center
 .wysihtml-button,
-  padding: 3px 10px
+  padding: 0 10px
+  margin: 2rem
   max-height: 44px
-  font-size: 24px
+  font-size: 14px
   line-height: 30px
-  color: $pink
-  border: 2px solid $pink
+  color: #555
+  border: 2px solid #555
   border-radius: 3px
   display: inline-block
   &:hover
     text-decoration: none
     color: #888
+  .material-icons
+    font-size: 14px
 .post-form-heading
   margin: 2rem 0 2rem 0
   line-height: 24px

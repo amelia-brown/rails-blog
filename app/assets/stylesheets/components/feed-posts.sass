@@ -9,26 +9,38 @@
   flex-direction: column
   align-items: flex-start
 .post-feed-info
+  position: relative
+  padding-top: 7rem
   padding-right: 3rem
   display: flex
   flex-direction: column
-  align-items: flex-end
+  flex: 1
 .post-feed-flex
-  width: 100%
+  width: 720px
+  margin: 0 auto
   display: flex
   flex-direction: row
   justify-content: center
 .post-feed-title
   @extend .heading
+  position: absolute
+  white-space: nowrap
+  top: 2rem
+  left: 0
 .post-feed-byline
   color: #555
-  padding: 1rem 0
+  padding: 1rem 0 0 2rem
   margin: 0
 .post-feed-timestamp
   color: #999
+  padding: 1rem 0 0 2rem
 .post-feed-text
-  max-width: 400px
   margin: 0 auto
   p:first-child
     padding-top: 50px
     text-indent: 50px
+.post-feed-content
+  flex: 3
+.post-feed-photo > img
+  width: 100%
+  height: auto
