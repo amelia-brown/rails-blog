@@ -11,11 +11,15 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @previous_posts = []
     3.times do |key|
-      post = Post.find(@post.id - key)
-      if post === nil
+      if key <= 0
         return
       else
-        @previous_posts.push(post)
+        post = Post.find(@post.id - key)
+        if post.id === nil
+          return
+        else
+          @previous_posts.push(post)
+        end
       end
     end
   end
