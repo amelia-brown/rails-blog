@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
 
+  def update
+    @post = Post.find(params[:id])
+    @post.update_attributes(post_params)
+    redirect_to @post
+  end
+
   def show
     @post = Post.find(params[:id])
     @previous_posts = []

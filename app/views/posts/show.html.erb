@@ -1,3 +1,7 @@
+<% if logged_in? %>
+  <i class="material-icons edit-post-button toggle-modal-button">edit</i>
+  <%= render 'shared/edit_post_form' %>
+<% end %>
 <div class="post-show" id="post-<%= @post.id %>">
   <h1 class="post-title">
     <%= @post.title %>
@@ -6,7 +10,7 @@
   <div class="post-info">
     <h3 class="post-byline">
       by <%= @post.user.name %>
-    </h3>
+  </h3>
   <span class="post-date">
     <%= date = post_time %>
   </span>
@@ -15,16 +19,17 @@
     <%= @post.content.html_safe %>
   </div>
   <div class="post-more">
+    <p>Recently posted:</p>
     <ul class="post-more-list">
       <% @previous_posts.each do |post| %>
-        <%= link_to post do %>
-          <li class="post-more-item">
+        <li class="post-more-item">
+          <%= link_to post do %>
             <span class="post-more-title"><%= post.title %></span>
             <div class="post-more-picture">
               <img src="<%= post.picture.url if post.picture %>" />
             </div>
-          </li>
-        <% end %>
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </div>

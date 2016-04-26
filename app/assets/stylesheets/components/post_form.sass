@@ -9,14 +9,17 @@
 .modal
   position: fixed
   display: flex
-  height: 100vh
-  width: 100vw
+  min-height: 100vh
+  min-width: 100vw
   background: transparentize(#555, 0.2)
   justify-content: center
   align-items: center
 .modal-content
   width: 100%
-  max-width: 480px
+  height: 90%
+  overflow: scroll
+  position: relative
+  max-width: 640px
 .post-form
   margin: 0 auto
   background: #fff

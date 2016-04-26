@@ -47,4 +47,54 @@
   p:first-child
     text-indent: 50px
 
+.edit-post-button
+  float: right
+  margin-top: 2rem
+  padding: 0.5rem
+  border-radius: 50%
+  background: $pink
+  color: #fff
+  box-shadow: 0 2px 2px 2px transparentize(#555, 0.7)
+  &:hover
+    cursor: pointer
+  i
+    font-size: 16px
+/* Sidebar */
+.post-more
+  margin-top: 100px
+  p
+    @extend .heading
+    height: 2.5rem
+    font-size: 16px
+    line-height: 24px
+    text-transform: lowercase
+    font-style: italic
+    margin: 2rem 0 2rem
+
+.post-more-list
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  width: 640px
+  padding-left: 0
+.post-more-item
+  list-style: none
+  width: 200px
+  position: relative
+  img
+    width: 100%
+    height: 125px
+    overflow: hidden
+  span
+    background: rgba(0,0,0,0.5)
+    color: #fff
+    width: 100%
+    padding: 5px 5px
+    font-family: $serif
+    position: absolute
+    bottom: 2rem
+    left: 0
+
+
+
 
