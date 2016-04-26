@@ -2,7 +2,7 @@
   <h1 class="post-title">
     <%= @post.title %>
   </h1>
-  <div class="post-photo"><img src="<%= post.picture.url if post.picture %>" /></div>
+  <div class="post-photo"><img src="<%= @post.picture.url if @post.picture %>" /></div>
   <div class="post-info">
     <h3 class="post-byline">
       by <%= @post.user.name %>
