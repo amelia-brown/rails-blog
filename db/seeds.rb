@@ -1,8 +1,9 @@
 about = Page.create!(title: "about")
 work = Page.create!(title: "work")
-content = Faker::Lorem.paragraphs(3, true).join("")
-paragraphs = "<p>" + content + "</p>" + "<p>" + content + "</p>" + "<p>" + content + "</p>",
-
+paragraphs= ""
+Faker::Lorem.paragraphs(3, true).collect! do |item|
+  paragraphs = paragraphs + "<p>" + item + "</p>"
+end
 
 User.create!(name: "Amelia", email: "amelia@example.com", password: "example")
 

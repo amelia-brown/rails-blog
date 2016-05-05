@@ -10,7 +10,7 @@
      data-url="<%= @page.title %>",
      data-pk="<%= content_block.id %>",
      data-title="Update content">
-     <%= content_block.content %>
+     <%= content_block.content.html_safe %>
 
   </a>
 
