@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/new'
-
   root 'pages#home'
+  get 'users/new'
   get '/about' => 'pages#about'
   put '/about' => 'pages#update'
   put '/about/edit' => 'pages#edit'
@@ -13,6 +12,5 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   resources :users
-  resources :pages
   resources :posts
 end
