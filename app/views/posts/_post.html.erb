@@ -9,7 +9,7 @@
     </div>
     <div class="post-feed-content">
       <div class="post-feed-photo"><%= image_tag post.picture.url if post.picture? %></div>
-      <div class="post-feed-text"><%= post.content.html_safe %></div>
+      <div class="post-feed-text"><%= truncate_html(post.content.html_safe) %></div>
       <%= link_to "read more", post %>
     </div>
   </div>
