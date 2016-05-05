@@ -8,8 +8,8 @@
       <span class="post-feed-timestamp">Posted <%= time_ago_in_words(post.created_at) %> ago.</span>
     </div>
     <div class="post-feed-content">
-      <div class="post-feed-photo"><img src="<%= post.picture.url if post.picture %>" />
-      <div class="post-feed-text"><%= truncate_content(post.content.html_safe) %></div>
+      <div class="post-feed-photo"><%= image_tag post.picture.url if post.picture? %></div>
+      <div class="post-feed-text"><%= post.content.html_safe %></div>
       <%= link_to "read more", post %>
     </div>
   </div>
