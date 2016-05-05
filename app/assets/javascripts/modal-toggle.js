@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $(".toggle-modal-button").click(function() {
-    $(".toggle-modal").toggle();
+  $(".modal__toggle-button").click(function() {
+    $(".modal__toggle-container").toggle();
   });
 });
