@@ -18,7 +18,7 @@
   <div class="post-content">
     <%= @post.content.html_safe %>
   </div>
-  <% if @previous_posts.length > 0 %>
+  <% if @previous_posts.count > 0 %>
     <div class="post-more">
       <p>Recently posted:</p>
       <ul class="post-more-list">
