@@ -9,9 +9,10 @@
         <div class="modal__picture">
           <%= f.label :picture, class: "modal__picture__label" do %>
             <i class="material-icons modal__picture__icon">add_a_photo</i>
-            <span>Add a photo</span>
+            <span class="modal__picture__span">Add a photo</span>
           <% end %>
-          <%= f.file_field :picture, class: "modal__field modal__field--hidden", accept: "image/jpeg,image/gif,image.png" %>
+          <%= f.file_field :picture, class: "modal__field modal__field__photo", accept: "image/jpeg,image/gif,image.png" %>
+          <img class="img-preview" src="#" alt="your image" />
         </div>
         <%= f.text_area :content,
           class: "modal__field modal__field--content",
