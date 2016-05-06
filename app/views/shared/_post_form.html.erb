@@ -7,11 +7,11 @@
         <%= render 'shared/error_messages', object: f.object %>
         <%= f.text_field :title, class: 'form-control modal__field modal__field--title', placeholder: "Title" %>
         <div class="modal__picture">
-          <%= f.label :picture do %>
-            <i class="material-icons modal__picture__label">add_a_photo</i>
+          <%= f.label :picture, class: "modal__picture__label" do %>
+            <i class="material-icons modal__picture__icon">add_a_photo</i>
             <span>Add a photo</span>
           <% end %>
-          <%= f.file_field :picture, class: "modal__field modal__field--title", accept: "image/jpeg,image/gif,image.png" %>
+          <%= f.file_field :picture, class: "modal__field modal__field--hidden", accept: "image/jpeg,image/gif,image.png" %>
         </div>
         <%= f.text_area :content,
           class: "modal__field modal__field--content",

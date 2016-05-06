@@ -14,32 +14,71 @@
 .modal__form-content
   width: 100%
   height: 90%
-  overflow: scroll
+  overflow-x: hidden
+  overflow-y: scroll
   position: relative
   max-width: 640px
   @extend .card
-//.post-form
-//  margin: 0 auto
-//  background: #fff
-//  padding: 1rem 4rem 4rem
-//  border-radius: 5px
-//  box-shadow: 0 2px 5px 2px transparentize(#555, 0.5)
-//.picture
-  display: inline-block
+.modal__toggle-button
+  @extend .circle-button
+.modal__toggle-button--open
+  position: absolute
+  right: 10%
+  top: 22rem
+.modal__toggle-button--close
+  position: absolute
+  right: 4rem
+  top: 4rem
+.modal__heading
+  margin-top: 3rem
+  margin-bottom: 3rem
+.modal__field
+  width: 100%
+  padding: 0
+  border-top: none
+  border-left: none
+  border-right: none
+  border-bottom: 1px solid #ccc
+  box-shadow: none
+.modal__field--title
   margin-bottom: 2rem
-  label
-    padding: 2rem 0
+.modal__picture
+  margin-bottom: 2rem
+  .modal__picture__label
     display: flex
     align-items: center
-    i, span
-      display: inline-block
-      vertical-align: top
-      margin-bottom: 0
-      padding-right: 1rem
+  i
+    padding-right: 2rem
+  i, span
+    color: #555
     &:hover
       cursor: pointer
       color: $pink
-    &:focus
+input[type="file"].modal__field--hidden
+  display: none
+.modal__field--content
+  margin-bottom: 1rem
+  height: 250px
+  overflow: scroll
+.modal__toolbar
+  display: flex
+  align-items: left
+  a
+    height: 25px
+    padding: 2px 5px
+    margin-right: 2rem
+    color: $pink
+    border: 1px solid $pink
+    border-radius: 3px
+    i
+      font-size: 20px
+
+
+
+//    &:hover
+      cursor: pointer
+      color: $pink
+      &:focus
       color: $pink
 //.post-form-content
   display: block
