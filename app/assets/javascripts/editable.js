@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $.fn.editable.defaults.mode = 'inline';
   $('.editable').editable({
+    inputclass: 'editable-input',
     ajaxOptions: {
       type: 'put',
       dataType: 'json'

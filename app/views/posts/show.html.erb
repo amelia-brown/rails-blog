@@ -1,5 +1,5 @@
 <% if logged_in? %>
-  <i class="material-icons edit-post-button toggle-modal-button">edit</i>
+  <i class="material-icons modal__toggle-button modal__toggle-button--open">edit</i>
   <%= render 'shared/edit_post_form' %>
 <% end %>
 <div class="post-show" id="post-<%= @post.id %>">
