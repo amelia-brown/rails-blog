@@ -1,27 +1,42 @@
 <div class="content-<%= content_block.page.title %>">
+  <div class="modal__toggle-container">
+    <div class="modal">
+      <div class="modal__form-content">
+        <i class="material-icons modal__toggle-button modal__toggle-button--close">close</i>
+        <h3 class="modal__heading">New Post</h3>
+        <%= form_for(content_block, html: {multipart: true}) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+          <%= f.text_area :content,
+            class: "modal__field modal__field",
+            id: "wysihtml5-textarea",
+            placeholder: "Compose..." %>
+          <div id="wysihtml5-toolbar", class="modal__toolbar" style="display: none;">
+            <a data-wysihtml5-command="bold"><strong>Bold</strong></a>
+            <a data-wysihtml5-command="italic"><em>Italic</em></a>
+            <a data-wysihtml5-command="createLink"><i class="material-icons link-button">link</i></a>
+            <div data-wysihtml5-dialog="createLink" style="display: none;">
+              <label>
+                Link:
+                <input data-wysihtml5-dialog-field="href" value="http://" class="text">
+              </label>
+              <a data-wysihtml5-action="save">ok</a> <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+            </div>
+          </div>
+          <%= f.submit "Update", class: "submit modal__submit" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
   <h4>Work <%= content_block.id %></h4>
-  <a href="#"
-     class="editable"
-     id="content<%= content_block.id %>",
+  <div class="content_block__content">
+    <% if logged_in? %>
+      <i class="material-icons modal__toggle-button modal__toggle-button--open">edit</i>
+    <% end %>
+    <%= content_block.content.html_safe %>
+    <%= link_to "Contact me", contact_path %>
+  </div>
 
-     data-disabled="<%= !content_block.editable %>",
-     data-type="textarea",
-     data-name="content",
-     page="<%= content_block.page.id %>",
-     data-url="<%= @page.title %>",
-     data-pk="<%= content_block.id %>",
-     data-title="Update content">
-     <%= content_block.content.html_safe %>
-     <%= link_to "Contact me", contact_path %>
-  </a>
-
-  <% if logged_in? %>
-    <i class="material-icons edit"
-       data-pk="<%= content_block.id %>"
-       data-page="<%= content_block.page.id %>"
-       data-editable="<%= content_block.editable %>"
-       id="edit<%= content_block.id %>">edit
-    </i>
-  <% end %>
 
 </div>

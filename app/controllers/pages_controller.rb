@@ -20,15 +20,15 @@ class PagesController < ApplicationController
       respond_to do |format|
         format.json { render json: @content_block }
       end
-#      render :nothing => true
+      #      render :nothing => true
     elsif @editable === nil
 
       @current_page = request.env['PATH_INFO']
-        if @current_page === "/about"
-          @page = Page.find(1)
-        elsif @current_page === "/work"
-          @page = Page.find(2)
-        end
+      if @current_page === "/about"
+        @page = Page.find(1)
+      elsif @current_page === "/work"
+        @page = Page.find(2)
+      end
       @content_block = @page.content_blocks.find(params[:pk])
       content = params[:value]
       respond_to do |format|
@@ -40,23 +40,23 @@ class PagesController < ApplicationController
       end
     end
   end
-    def about
-      @page = Page.find_by(title: "about")
-      @content = @page.content_blocks
-      @user = current_user
-    end
-
-    def work
-      @page = Page.find_by(title: "work")
-      @content = @page.content_blocks
-      @user = current_user
-    end
-
-    def contact
-    end
-
-    private
-    def page_params
-      params.require(:page, :content_block).permit(:pk, :id, :editable)
-    end
+  def about
+    @page = Page.find_by(title: "about")
+    @content = @page.content_blocks
+    @user = current_user
   end
+
+  def work
+    @page = Page.find_by(title: "work")
+    @content = @page.content_blocks
+    @user = current_user
+  end
+
+  def contact
+  end
+
+  private
+  def page_params
+    params.require(:page, :content_block).permit(:pk, :id, :editable)
+  end
+end
