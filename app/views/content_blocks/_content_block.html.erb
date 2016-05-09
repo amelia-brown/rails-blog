@@ -22,7 +22,7 @@
               <a data-wysihtml5-action="save">ok</a> <a data-wysihtml5-dialog-action="cancel">Cancel</a>
             </div>
           </div>
-          <%= f.submit "Update", class: "submit modal__submit" %>
+          <%= f.submit "Update", class: "submit modal__submit", page: content_block.page.id, id: content_block.id %>
         <% end %>
       </div>
     </div>
