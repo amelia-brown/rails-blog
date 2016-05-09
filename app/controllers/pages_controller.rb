@@ -53,6 +53,7 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @page = Page.find_by(title: "contact")
   end
 
   private
