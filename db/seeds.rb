@@ -5,7 +5,7 @@ Faker::Lorem.paragraphs(3, true).collect! do |item|
   paragraphs = paragraphs + "<p>" + item + "</p>"
 end
 
-User.create!(name: "Amelia", email: "amelia@example.com", password: "example")
+User.create!(name: "Example User", email: "amelia.brown389@gmail.com", password: "example")
 
 about.content_blocks.create!(content: paragraphs)
 work.content_blocks.create!(content: paragraphs)

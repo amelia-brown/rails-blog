@@ -2,7 +2,12 @@
   <div class="modal">
     <div class="modal__form-content">
       <i class="material-icons modal__toggle-button modal__toggle-button--close">close</i>
-      <h3 class="modal__heading">Edit Post</h3>
+      <div class="modal__flex-container">
+      <h3 class="modal__heading modal__heading__edit">Edit Post</h3>
+      <%= link_to @post, method: :delete, class: "delete", data: { confirm: "You sure?" } do %>
+        <i class="material-icons">delete</i>
+      <% end %>
+      </div>
       <%= form_for(@post, url: {action: "update"}, html: {multipart: true}) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <%= f.text_field :title, class: 'form-control modal__field modal__field--title', value: @post.title %>

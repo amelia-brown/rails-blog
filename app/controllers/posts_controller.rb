@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:create, :update, :destroy]
 
   def update
     @post = Post.find(params[:id])
@@ -35,11 +35,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    Post.find(params[:id]).destroy
+    flash[:success] = "Post deleted"
+    redirect_to root_url
   end
 
   private
     def post_params
-      params.require(:post).permit(:content, :title, :picture)
+      params.permit(:content, :title, :picture)
     end
 end
 
