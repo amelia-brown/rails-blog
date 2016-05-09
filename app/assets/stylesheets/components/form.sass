@@ -9,11 +9,13 @@
   box-shadow: 0 0 3px 3px transparentize($pink, 0.6)
 
 .form
-  width: 80%
-  padding: 4rem
+  width: 70%
+  padding: 4rem 8rem
   margin: 0 auto
   border-radius: 5px
-  box-shadow: 0 2px 3px 2px transparentize(#555, 0.5)
+  box-shadow: 0 3px 3px 3px transparentize(#555, 0.7)
+  div.flex-container
+    margin-bottom: 3rem
 input, label
   display: block
   font-family: $sans-serif
@@ -30,7 +32,7 @@ input
   ::placeholder
     color: #555
 .submit
-  background: $pink
+  background: linear-gradient(transparentize($pink, 0.33), $pink)
   color: #fff
   border: none
   border-radius: 3px
