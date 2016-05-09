@@ -2,8 +2,14 @@
 @import '../base/fonts'
 @import '../base/extends'
 
+*:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="url"]:focus, textarea:focus a:focus
+  border-color: $pink
+  outline: 0 none
+  border-radius: 3px
+  box-shadow: 0 0 3px 3px transparentize($pink, 0.6)
+
 .form
-  width: 50%
+  width: 80%
   padding: 4rem
   margin: 0 auto
   border-radius: 5px
@@ -15,6 +21,12 @@ input, label
 input
   width: 100%
   margin-bottom: 20px
+  padding: 0.5rem
+  border-top: none
+  border-left: none
+  border-right: none
+  border-bottom: 1px solid #ccc
+  box-shadow: none
   ::placeholder
     color: #555
 .submit
@@ -29,5 +41,15 @@ input
   width: 100px
   box-shadow: 0 2px 5px 2px transparentize(#555, 0.5)
 textarea
+  resize: none
+  margin-top: 3rem
+  padding: 0.5rem
+  width: 100%
+  height: 250px
+  border-right: none
+  border-left: 1px solid #ccc
+  border-top: none
+  border-bottom: 1px solid #ccc
+  font-family: $sans-serif
   ::placeholder
     color: #555

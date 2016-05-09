@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :logged_in_user, only: [:update]
+before_action :logged_in_user, only: [:update]
   def show
   end
   def home
@@ -54,10 +54,17 @@ class PagesController < ApplicationController
 
   def contact
     @page = Page.find_by(title: "contact")
+    @sender = {:name => "",
+               :email => "",
+               :message => ""}
+    @user = User.first
   end
 
   private
   def page_params
     params.require(:page, :content_block).permit(:pk, :id, :editable)
+  end
+  def sender_params
+    params.require(:sender).permit(:name, :email, :content)
   end
 end
