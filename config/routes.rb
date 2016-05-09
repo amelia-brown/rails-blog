@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/work' => 'pages#work'
   put '/work/content_block/:id' => 'content_blocks#update'
   get 'contact' => 'pages#contact'
+  post '/contact' => 'pages#send_email'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'

@@ -60,11 +60,20 @@ before_action :logged_in_user, only: [:update]
     @user = User.first
   end
 
+  def send_email
+    @sender = {:name => params[:name],
+               :email => params[:email],
+               :message => params[:message]}
+    ContactMailer.contact_email(@sender).deliver_now
+    redirect_to root_url
+    flash[:success] = "message sent"
+  end
+
   private
   def page_params
     params.require(:page, :content_block).permit(:pk, :id, :editable)
   end
   def sender_params
-    params.require(:sender).permit(:name, :email, :content)
+    params.require(:sender).permit(:name, :email, :message)
   end
 end
