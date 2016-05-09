@@ -3,16 +3,17 @@
     <div class="modal">
       <div class="modal__form-content">
         <i class="material-icons modal__toggle-button modal__toggle-button--close">close</i>
-        <h3 class="modal__heading">New Post</h3>
+        <h3 class="modal__heading">Edit content</h3>
         <%= form_for(content_block, html: {multipart: true}) do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
           <%= f.text_area :content,
-            class: "modal__field modal__field",
+            class: "modal__field modal__field--content",
             id: "wysihtml5-textarea",
-            placeholder: "Compose..." %>
-          <div id="wysihtml5-toolbar", class="modal__toolbar" style="display: none;">
+            value: content_block.content.html_safe %>
+          <div id="wysihtml5-toolbar" class="modal__toolbar">
             <a data-wysihtml5-command="bold"><strong>Bold</strong></a>
             <a data-wysihtml5-command="italic"><em>Italic</em></a>
+            <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">Heading</a>
             <a data-wysihtml5-command="createLink"><i class="material-icons link-button">link</i></a>
             <div data-wysihtml5-dialog="createLink" style="display: none;">
               <label>
@@ -29,13 +30,11 @@
   </div>
 
 
-  <h4>Work <%= content_block.id %></h4>
   <div class="content_block__content">
     <% if logged_in? %>
       <i class="material-icons modal__toggle-button modal__toggle-button--open">edit</i>
     <% end %>
     <%= content_block.content.html_safe %>
-    <%= link_to "Contact me", contact_path %>
   </div>
 
 

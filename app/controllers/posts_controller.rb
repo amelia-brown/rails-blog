@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @previous_posts = []
     3.times do |key|
-      if key <= 0
+      if @post.id - key <= 0
         return
       else
         post = Post.find(@post.id - key)
