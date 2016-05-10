@@ -66,7 +66,7 @@ before_action :logged_in_user, only: [:update]
                :message => params[:message]}
     ContactMailer.contact_email(@sender).deliver_now
     redirect_to root_url
-    flash[:success] = "message sent"
+    flash[:success] = "message sent #{@sender[:name][:email][:message]}"
   end
 
   private

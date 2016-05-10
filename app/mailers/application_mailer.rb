@@ -4,7 +4,7 @@ class ApplicationMailer < ActionMailer::Base
     @user = User.first
     @sender = sender_params
     @url = 'http://example.com/login'
-    mail(to: @user.email, subject: "New message from #{@sender}")
+    mail(to: @user.email, subject: "New message from #{@sender[:name]}")
   end
 
   private
