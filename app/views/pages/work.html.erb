@@ -1,6 +1,13 @@
 <% provide(:title, "Work") %>
-<% if @page.content_blocks.any? %>
-  <div class="content pages-work">
-    <%= render @content %>
+<div class="work__container">
+  <div class="work__img__cropbox">
+    <img class="work__splash" src="/assets/work-splash.jpeg" />
   </div>
-<% end %>
+  <% if @page.content_blocks.any? %>
+    <div class="content pages-work">
+      <h3>What I do</h3>
+      <%= render @content %>
+      <%= link_to "Contact me", contact_path, class:"work__cta-button" %>
+    </div>
+  <% end %>
+</div>

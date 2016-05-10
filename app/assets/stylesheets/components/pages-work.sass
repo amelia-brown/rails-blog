@@ -2,11 +2,64 @@
 @import '../base/extends'
 @import '../base/fonts'
 
-.pages-work
+.work__container
+  display: flex
+  justify-content: center
+  align-items: flex-top
+  div.work__img__cropbox
+    width: 100%
+    height: 700px
+    overflow: hidden
+  img.work__splash
+    position: relative
+    left: -250px
+    height: 100%
+  div.pages-work
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-around
+    width: 60%
+    color: #fff
+    background: $pink
+    padding: 4rem 2rem
+    max-height: 700px
+  h3
+    color: #fff
+    margin: 0
+    padding-top: 2rem
+    letter-spacing: 3px
+    font-weight: 200
+
+div.content-work
+  font-weight: 300
+  letter-spacing: 0.5px
+  .content_block__content
+    padding-bottom: 2rem
+    position: relative
+  i.material-icons.modal__toggle-button.modal__toggle-button--open
+    position: relative
+    top: 3rem
+    right: -65rem
+.work__cta-button
+  margin: 0 auto
+  padding: 1rem 2rem
+  color: #fff
+  font-size: 2rem
+  font-weight: 300
+  letter-spacing: 1px
+  border: 2px solid #fff
+  border-radius: 3px
+  &:hover
+    color: transparentize($pink, 0.5)
+
+
+
+//.pages-work
   display: flex
   flex-direction: column
   align-items: center
-.content-work
+//.content-work
   position: relative
   margin-bottom: 7rem
   @extend .card
