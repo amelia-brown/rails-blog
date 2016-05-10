@@ -61,12 +61,10 @@ before_action :logged_in_user, only: [:update]
   end
 
   def send_email
-    @sender = {:name => params[:name],
-               :email => params[:email],
-               :message => params[:message]}
+    @sender = sender_params
     ContactMailer.contact_email(@sender).deliver_now
     redirect_to root_url
-    flash[:success] = "message sent #{@sender[:name][:email][:message]}"
+    flash[:success] = "message sent"
   end
 
   private
@@ -74,6 +72,6 @@ before_action :logged_in_user, only: [:update]
     params.require(:page, :content_block).permit(:pk, :id, :editable)
   end
   def sender_params
-    params.require(:sender).permit(:name, :email, :message)
+    params.permit(:name, :email, :message)
   end
 end

@@ -1,5 +1,5 @@
 <% provide(:title, "Contact") %>
-<%= form_tag @sender, class: "form" do %>
+<%= form_tag("/contact", method: "post", class: "form") do %>
   <div class="flex-container">
     <h1 class="heading">Contact me</h1>
   </div>
