@@ -16,7 +16,6 @@ $(document).ready(function() {
   };
 
   function removePhoto() {
-    console.log("poop");
     $('.img-preview').attr("src", "#").removeClass("show");
     $('.modal__picture__remove').remove();
     $('.modal__picture__span').css("display", "inline-block")
